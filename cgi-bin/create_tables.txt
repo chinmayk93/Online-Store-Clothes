@@ -1,0 +1,31 @@
+use jadrn022;
+ 
+drop table if exists product;
+drop table if exists vendor;
+drop table if exists category;
+ 
+create table vendor(
+id int AUTO_INCREMENT,
+name varchar(20) NOT NULL,
+primary key(id));
+ 
+create table category(
+id int AUTO_INCREMENT,
+name varchar(20) NOT NULL,
+primary key(id));
+ 
+create table product(
+sku char(7) NOT NULL,
+catID int,
+venID int,
+vendorModel varchar(50),
+description varchar(1024),
+features varchar(1024),
+cost decimal(10,2),
+retail decimal(10,2),
+image varchar(1024),
+primary key(sku),
+foreign key(catID) references category(id),
+foreign key(venID) references vendor(id));
+ 
+

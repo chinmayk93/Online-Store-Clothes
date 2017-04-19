@@ -1,0 +1,110 @@
+use jadrn018;
+ 
+drop table if exists product;
+drop table if exists vendor;
+drop table if exists category;
+drop table if exists merchandise_in;
+drop table if exists merchandise_out;
+drop table if exists on_hand;
+ 
+create table vendor(
+id int AUTO_INCREMENT,
+name varchar(20) NOT NULL,
+primary key(id));
+ 
+create table category(
+id int AUTO_INCREMENT,
+name varchar(20) NOT NULL,
+primary key(id));
+ 
+create table product(
+sku char(7) NOT NULL,
+catID int,
+venID int,
+vendorModel varchar(50),
+description varchar(1024),
+features varchar(1024),
+cost decimal(10,2),
+retail decimal(10,2),
+image varchar(1024),
+primary key(sku),
+foreign key(catID) references category(id),
+foreign key(venID) references vendor(id));
+ 
+create table merchandise_in
+(sku char(7) NOT NULL,
+date char(15),
+quantity int);
+
+create table merchandise_out
+(sku char(7) NOT NULL,
+date char(15),
+quantity int);
+
+create table on_hand
+(sku char(7) primary key NOT NULL,
+last_date_modified char(15),
+on_hand_quantity int);
+
+insert into vendor values(NULL,'Asus');
+insert into vendor values(NULL,'HP');
+insert into vendor values(NULL,'Dell');
+insert into vendor values(NULL,'Lenovo');
+insert into vendor values(NULL,'Microsoft');
+insert into vendor values(NULL,'Motorola');
+insert into vendor values(NULL,'LG');
+insert into vendor values(NULL,'Sony');
+insert into vendor values(NULL,'Apple');
+insert into vendor values(NULL,'Samsung');
+insert into vendor values(NULL,'Acer');
+insert into vendor values(NULL,'Toshiba');
+insert into vendor values(NULL,'Insignia');
+insert into vendor values(NULL,'Vizio');
+ 
+insert into category values(NULL,'Laptop');
+insert into category values(NULL,'Cell Phone');
+insert into category values(NULL,'Tablet');
+insert into category values(NULL,'TV');
+ 
+insert into product values('LAP-001','1','1','L1','Asus - 15.6 inch Laptop - Intel Core i3 - 4GB Memory - 1TB Hard Drive - Spin Pattern in Black.', 'Hard Drive Capacity - 1000 gigabytes, Operating System - Windows 10, Processor Brand - Intel, Processor Speed - 2.2 gigahertz, Processor Model - Intel 5th Generation Core i3, System Memory (RAM) - 4 gigabytes, Screen Size - 15.6 inches','300.45','375.65','lap-001.jpg');
+ 
+insert into product values('LAP-002','1','2','L2','HP - 15.6 inch Laptop - AMD A6-Series - 4GB Memory - 500GB Hard Drive – Black',
+'Hard Drive Capacity - 500 gigabytes, Operating System - Windows 10, Processor Brand - AMD, Processor Speed - 2.0 gigahertz, Processor Model - AMD A6-Series, System Memory (RAM) - 4 gigabytes, Screen Size - 15.6 inches','270.23','340.89','lap-002.jpg');
+ 
+insert into product values('LAP-003','1','3','L3','Dell - Inspiron 14 inch Laptop - Intel Celeron - 2GB Memory - 32GB eMMC Flash Memory – Black','Hard Drive Capacity - 32 gigabytes, Operating System - Windows 10, Processor Brand - Intel, Processor Speed - 2.16 gigahertz, Processor Model - Intel Celeron, System Memory (RAM) - 2 gigabytes, Screen Size - 14 inches','200.34','251.67','lap-003.jpg');
+
+insert into product values('LAP-004','1','4','L4','Lenovo - Z50 15.6 inch Laptop - AMD A10-Series - 8GB Memory - 1TB Hard Drive - Black/Silver','Hard Drive Capacity - 1000 gigabytes, Operating System - Windows 10, Processor Brand - AMD, Processor Speed - 1.9  gigahertz, Processor Model - AMD A10-Series, System Memory (RAM) - 8 gigabytes, Screen Size - 15.6 inches','349.99','467.90','lap-004.jpg');
+
+insert into product values('LAP-005','1','5','L5','Microsoft - Surface Pro 4 - 12.3 inch - 128GB - Intel Core i5 – Silver','Screen Size - 12.3 inches, Touch Screen - Yes, Operating System - Windows 10 Pro, Internet Connectivity - Wi-Fi, Processor Brand - Intel, Processor Model - Intel 6th Generation Core i5, Storage Capacity - 128 gigabytes','900.04','1125.45','lap-005.jpg');
+
+insert into product values('CEL-001','2','6','C1','Motorola - Moto G 2nd Generation Cell Phone (Unlocked) (U.S. Version) – Black','Operating System - Android 4.4 KitKat, Processor Speed - 1.2 gigahertz, Internal Memory - 8 gigabytes, Screen Size - 5 inches, Water Resistant - No, Internet Connectable - Yes','120.11','150.68','cel-001.jpg');
+
+insert into product values('CEL-002','2','7','C2','LG - Google Nexus 5X 4G with 16GB Memory Cell Phone (Unlocked) – Carbon','Operating System - Android 6.0 Marshmallow, Processor Speed - 1.8 gigahertz, Internal Memory - 16 gigabytes, Water Resistant - No, Phone Memory (RAM) - 2 gigabytes, Internet Connectable - Yes','300.06','380.99','cel-002.jpg');
+
+insert into product values('CEL-003','2','8','C3','Sony - Xperia C4 4G with 16GB Memory Cell Phone (Unlocked) – Black','Operating System – Android 5.0 Lollipop, Processor Speed - 1.7 gigahertz, Internal Memory - 16 gigabytes, Screen Size - 5.5 inches, Water Resistant - No, Internet Connectable - Yes','269.99','350.87','cel-003.jpg');
+
+insert into product values('CEL-004','2','9','C4','Apple - iPhone 5s 16GB Cell Phone (Unlocked) - Gray','Capacitive touch-screen display - 8MP rear-facing camera with dual-LED flash, Simultaneous high-definition video and image recording 1.2MP front-facing camera','450.44','575.98','cel-004.jpg');
+
+insert into product values('CEL-005','2','10','C5','Samsung - Galaxy S 5 4G Cell Phone (Unlocked) - Copper Gold','Qualcomm Snapdragon 801 quad-core processor, Android 4.4.2 KitKat operating system, 4G LTE mobile hotspot capability, Only compatible with GSM carriers, including AT&T and T-Mobile','330.33','440.98','cel-005.jpg');
+
+insert into product values('TAB-001','3','10','B1','Samsung - Galaxy Tab E - 9.6 inch - 16GB - Black','Android 5.1 Lollipop 9.6 inch display with WXGA (1280 x 800) resolution, 16GB storage capacity, Quad-core processor, Wi-Fi, Bluetooth 4.1 interface, 5.0MP rear-facing and 2.0MP front-facing cameras','200.99','280.78','tab-001.jpg');
+
+insert into product values('TAB-002','3','5','B2','Microsoft - Surface 3 - 10.8 inch - Intel Atom - 64GB - Silver','Windows 10 operating system, 10.8 inch LCD touch screen with 1920 x 1280 resolution, 64GB storage capacity, Quad-core processor, Wi-Fi, Dual cameras, USB 3.0 port','400.99','520.34','tab-002.jpg');
+
+insert into product values('TAB-003','3','11','B3', 'Acer - Iconia Tab 8 - 8 inch - Intel Atom - 16GB - Silver','Android 5.0 Lollipop operating system, 8 inch 10-finger touch screen with 1280 x 800 resolution, 16GB storage capacity, Quad-core processor, Wi-Fi, Bluetooth 4.0, 5.0MP rear-facing and 0.3MP front-facing cameras','100.45','130.76','tab-003.jpg');
+
+insert into product values('TAB-004','3','9','B4','Apple - iPad Air 2 Wi-Fi 16GB - Gold','9.7 inch Retina display, Apple iOS 8.1, 16GB storage capacity, A8X chip, Wi-Fi, 8MP iSight camera','400.87','510.54','tab-004.jpg');
+
+insert into product values('TAB-005','3','12','B5','Toshiba - Excite Write - 10.1 inch - 32GB - Silver','Android 4.2.1 Jelly Bean operating system, 10.1 inch capacitive 10-finger multitouch screen with 2560 x 1600 resolution, 32GB storage capacity, Quad-core processor, Wi-Fi','600.88','760.66','tab-005.jpg');
+
+insert into product values('TEL-001','4','8','T1','Sony - 55 inch Class (54.6 inch Diag.) - LED - 2160p - Smart - 4K Ultra HD TV - Black','Display Type - LED, Number Of HDMI Inputs - 4, Number Of USB Port(s) - 3, Screen Size - 54.6 inches, Digital Tuner -Yes','1000.23','1250.50','tel-001.jpg');
+ 
+insert into product values('TEL-002','4','10','T2','Samsung - 60 inch Class (60 inch Diag.) - LED - 2160p - Smart - 3D - 4K Ultra HD TV - Silver','Smart Capable - Yes, Display Type - LED, Number Of HDMI Inputs - 4, Number Of USB Port(s) - 3, Screen Size - 60 inches','980.87','1235.45','tel-002.jpg');
+
+insert into product values('TEL-003','4','7','T3','LG - 55 inch Class (54.6 inch Diag.) - LED - 2160p - Smart - 4K Ultra HD TV - Black','Smart Capable - Yes, Display Type - LED, Refresh Rate - 120Hz, Number Of HDMI Inputs - 3, Number Of USB Port(s) - 1, Screen Size - 54.6 inches','700.10','880.88','tel-003.jpg');
+
+insert into product values('TEL-004','4','13','T4','Insignia - 32 inch Class (31.5 inch Diag.) - LED - 1080p - Smart - HDTV Roku TV - Black','Smart Capable - Yes, Display Type - LED, Refresh Rate - 60Hz, Number Of HDMI Inputs - 3, Number Of USB Port(s) - 1, Screen Size - 31.5 inches, Digital Tuner - Yes','200.45','265.66','tel-004.jpg');
+
+insert into product values('TEL-005','4','14','T5','VIZIO - 55 inch Class (54.64 inch Diag.) - LED - 2160p - Smart - 4K Ultra HDTV - Black','Smart Capable – Yes, Display Type - LED, Refresh Rate - 120Hz, Number Of HDMI Inputs - 5, Number Of USB Port(s) - 1, Screen Size - 54.6 inches, Digital Tuner - Yes','700.88','988.90','tel-005.jpg');
+ 
+ 

@@ -1,0 +1,141 @@
+/*  More, Ashwini    Account: jadrn018
+                     CS645, Spring 2016
+                     Project #1
+*/
+body, html    {margin:0;
+               height:96%;
+               width:100%;
+               position:fixed}
+
+h1,h2,h3      {color: #4e4edb;
+               padding-top:40px;
+               font-family: sans-serif;}
+
+.header        {height:15px;
+               background-color:#4e4edb;
+               position:relative;}
+
+footer        {padding:10px 0;
+               background-color: #4e4edb;
+               text-align: center;
+               color: white;
+               font-size:14px;}
+
+.resp      {width:100%; height: 98%; margin:0 auto;}
+
+.boundary_logo{width:1200px; margin:0 auto;}
+
+.logo         {width:1200px;}
+
+.logo img     {padding:0 0 0 500px ;
+               width:200px;height:120px;
+ }
+
+.login        {width:450px;
+               height:autofit;  
+               margin: 30px auto;
+               text-align:center;
+	       border: solid #4e4edb 2px;
+	       background-color:#F7F7F7;}
+
+.login #user, #password               
+                {height:24px; font-size:16px;}
+
+#pic, #pic2 {margin-left:130px;margin-top:0; margin-bottom:20px;}
+
+#pic3 {margin-left:249px;margin-top:0; margin-bottom:20px;}
+
+#sku, #sku2, #sku3 {border-style: solid; border-color: #4e4edb;
+		border-radius: 5px;}
+
+#submitbtn, #resetbtn {border-radius: 5px;font-family: sans-serif;
+        font-weight: bold;border:none; width:100px; height:30px; background:#4e4edb;color:white;margin:20px 20px 10px 20px;}
+
+#addbtn, #editbtn, #deletebtn, #resetbtn1, #resetbtn2, #resetbtn3{border-radius: 5px;font-family: sans-serif;
+	font-weight: bold;border:none; width:100px; height:30px; background:#4e4edb;color:white;margin:60px 20px 10px 20px;
+   }
+
+#addbtn:hover, #editbtn:hover, #deletebtn:hover,
+#resetbtn:hover, #resetbtn1:hover, #resetbtn2:hover, 
+#resetbtn3:hover, #submitbtn:hover {
+	background: gray ;
+	color: #fff}
+
+#logoutbtn:hover {color: gray;}
+
+#logoutbtn {background-color: transparent;
+  text-decoration: underline;
+  border: none;
+  margin: 0 0 0 1100px;
+  font-size:16px;
+        font-weight: bold; color:#4e4edb; }
+
+#error_msg
+{   height: 50px;
+    color: red;
+    font-family: sans-serif;
+    font-style : bold;
+    padding-top: 5px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    text-align:center}
+
+#message_line, #message_line2, #message_line3 {
+    height: 60px;
+    color: red;
+    font-family: sans-serif;
+    font-style: bold;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    text-align:center}           
+
+div#tabs ul li {
+    float: left;
+    height: 25px;
+    padding: 4px 10px 0 10px;
+    margin-right: 3px;
+    border: none;
+    position: relative;
+    background: #4e4edb;
+    color:white}
+
+div#tabs ul li a {
+    text-decoration: none;
+    color: white;}
+
+div#tabs ul li.ui-tabs-selected {
+    background: white;
+    color:#4e4edb;}
+
+div#tabs ul li.ui-tabs-selected a {
+    color: #4e4edb;
+    background: white;}
+
+#tabs li:hover {
+ background: gray;}
+
+table td{
+color:#4e4edb;}
+
+div#tabs-1, #tabs-2, #tabs-3 {
+    height: 85%;
+    background:white;	
+    border: 1px solid #009;
+    padding: 10px 10px 10px 25px;}
+
+.ui-tabs-hide {
+    display: none;}
+
+div#tabs {
+    margin: 0 110px 100px 155px;
+    max-height: 450px;
+    height :450px;
+    width: 900px;}
+
+div#tabs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 25px;}
+

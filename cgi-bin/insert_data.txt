@@ -1,0 +1,20 @@
+use jadrn022;
+ 
+insert into vendor values(NULL,'Calvin Klein');
+insert into vendor values(NULL,'Puma');
+insert into vendor values(NULL,'French Connection');
+insert into vendor values(NULL,'Forever 21');
+
+ 
+insert into category values(NULL,'Mens T-shirts');
+insert into category values(NULL,'Womens tops');
+insert into category values(NULL,'Mens jeans');
+insert into category values(NULL,'womens jeans');	
+ 
+insert into product values('MET-001','1','1','MNT1','True Religion Mens Stacked Logo Tee.Product Dimensions: 1 x 1 x 1 inches.Shipping Weight: 1 pounds.', '100% Cotton. Imported','49.99','69.99','menst1.jpg');
+ 
+insert into product values('WOT-001','2','1','WNT1','Haola Womens Summer Cross Front Tops Deep V Neck Casual Teen Girls Tees T Shirts.','20% spandex . Machine Wash / Tumble Dry / No Bleach','24.99','40.99','woment1.jpg');
+ 
+insert into product values('MEJ-001','3','1','MJ1','Calvin Klein Mens Slim Straight Jean Streak Tint','98% Cotton, 2% Elastane. Machine Wash','69.99','89.99','mensj1.jpg');
+
+insert into product values('WOJ-001','4','1','WJ1','Hudson Womens Nico Midrise Skinny Jean with Recovery','Contrast stitching. Machine Wash. 43% Viscose, 27% Cotton, 14% Modal, 14% Polyester, 2% Elastane','99.99','119.99','womenj1.jpg');
